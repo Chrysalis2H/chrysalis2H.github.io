@@ -101,7 +101,7 @@
 ##
 创建Github域名和空间Github账号的username会影响到你的域名，然而在创建完成后同样也是可以去修改你的username。
 账号创建好后，需要创建一个仓库(repository)来储存我们的网站，创建仓库时，仓库名（repository name）username.github">
-<meta property="og:updated_time" content="2017-02-10T13:51:42.975Z">
+<meta property="og:updated_time" content="2017-02-10T14:04:35.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo, Hello My Blog">
 <meta name="twitter:description" content="历尽千辛万苦还是把你给配置好了。你好，我的Blog。
@@ -374,7 +374,7 @@
 <h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><ol>
 <li><p>Node.js的下载与安装</p>
 <p>node.js的<a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址</a>。自己选择路径，安装完以后，进入到根目录下。</p>
-<p>打开cmd，<figure class="highlight plain"><figcaption><span>node -v ``` 能显示出版本号即为成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">2.	配置全局模块的存放路径</div><div class="line"></div><div class="line">	npm是NodeJS的模块管理，我们可以自己配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便首先在NodeJs下建立“node_global”及“node_cache”两个文件夹。</div><div class="line">	</div><div class="line">	接着在cmd中键入两行命令：</div></pre></td></tr></table></figure></p>
+<p>打开cmd，<figure class="highlight plain"><figcaption><span>node -v ``` 能显示出版本号即为成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	</div><div class="line">2.	配置全局模块的存放路径</div><div class="line"></div><div class="line">	npm是NodeJS的模块管理，我们可以自己配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便首先在NodeJs下建立“node_global”及“node_cache”两个文件夹。</div><div class="line">	</div><div class="line">	接着在cmd中键入两行命令：</div></pre></td></tr></table></figure></p>
 <p>G:/&gt; npm config set prefix “G:\Program Files\Programe\nodejs\node_global”     </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">	</div></pre></td></tr></table></figure>
 <p>G:/&gt; npm config set cache “G:\Program Files\Programe\nodejs\node_cache”<br>```</p>
@@ -384,9 +384,9 @@
 <p>由于前面改变了module的默认地址，所有用户变量都需要跟着改变一下(用户变量<code>PATH</code>修改为刚才我们设置的全局模块存放路径(即<code>G:\Program Files\Programe\nodejs\node_global</code>),否则在使用module的时候会再cmd中出现<code>XXX不是内部或外部命令，也不是可运行的程序或批处理文件</code>    错误。</p>
 <p>用户变量设置</p>
 <blockquote>
-<p>变量名： Path</p>
-<p>变量值： xxxx;G:\Program Files\Programe\nodejs\node_modules\npm;G:\Program Files\Programe\nodejs\node_global</p>
-<p>注：xxxx为你之前的用户变量，只需要在后面加上即可。</p>
+<p>变量名:Path</p>
+<p>变量值:xxxx;G:\Program Files\Programe\nodejs\node_modules\npm;G:\Program Files\Programe\nodejs\node_global</p>
+<p>注:xxxx为你之前的用户变量，只需要在后面加上即可。</p>
 </blockquote>
 <p>同时在系统变量添加<code>NODE_PATH</code>变量，使用全局安装时，首先会在这个目录去寻找模块。</p>
 <blockquote>
@@ -416,9 +416,14 @@
 <p><code>G:/&gt; cd username.github.io</code><br><code>G:/&gt; git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
 <p>这是一个极简的主题，还有很多主体<a href="https://hexo.io/themes/" target="_blank" rel="external">在这里</a>，想用哪个就用哪个</p>
 <p><strong> 基础配置： </strong> 在你的目录下，开始编辑<code>_config.yml</code>,下面的需要去修改。配置的键值之间一定要有空格，简单的说就是冒号后面空一格。<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置说明</a></p>
-<p><pre><br>title: Chrysalis2H’s Blog        //你博客的名字`<br>author: chrysalis2h            //你的名字<br>language: zh-Hans                //语言 中文<br>theme: next                   //刚刚安装的主题名称<br>deploy:<br>  type: git                //使用Git 发布<br>  repo: <a href="https://github.com/username/username.github.io.git" target="_blank" rel="external">https://github.com/username/username.github.io.git</a>    </pre></p>
-<pre><code>// 刚创建的Github仓库
-</code></pre><p><br><strong> 主题配置： </strong>    配置文件在Hexo根目录下的<code>/themes/next/_config.yml</code>。<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="external">next 配置说明</a></p>
+<p><pre><br>title: Chrysalis2H’s Blog        //你博客的名字<code>author: chrysalis2h                //你的名字
+language: zh-Hans                //语言 中文
+theme: next                       //刚刚安装的主题名称
+deploy:
+  type: git                    //使用Git 发布
+  repo: https://github.com/username/username.github.io.git        // 刚创建的Github仓库
+&lt;/pre&gt;
+** 主题配置： **    配置文件在Hexo根目录下的</code>/themes/next/_config.yml`。<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="external">next 配置说明</a></pre></p>
 </li>
 <li><p>准备工作基本已完成</p>
 <p>你的blog文章目录在根目录下的<code>/source/_posts/</code>里，里面的<code>hello-world.md</code>已经等你好久了。文章用Markdown来编写，也不用再去写一篇了，直接来准备测试一下看看吧。</p>
