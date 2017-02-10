@@ -354,97 +354,16 @@
 
       
         
-          
-            <p>历尽千辛万苦还是把你给配置好了。你好，我的Blog。</p>
+          <p>1历尽千辛万苦还是把你给配置好了。你好，我的Blog。</p>
 <p>还是选择记录一下基于Windows的配置的过程。</p>
-<p>##</p>
-<h3 id="创建Github域名和空间"><a href="#创建Github域名和空间" class="headerlink" title="创建Github域名和空间"></a>创建Github域名和空间</h3><p>Github账号的<strong>username</strong>会影响到你的域名，然而在创建完成后同样也是可以去修改你的username。</p>
-<p>账号创建好后，需要创建一个仓库(repository)来储存我们的网站，创建仓库时，仓库名（repository name）<strong>username</strong>.github.io 的<strong>username</strong> 一定与前面的你账号的 <strong>username</strong> 一致，记住你的 <strong>username</strong> 下面会用到。</p>
-<h3 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h3><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a> 可以说是目前最流行的博客框架了，基于Nodejs，更多信息可以google，下面需要安装的工具包括 Git，Nodejs，Hexo。</p>
-<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>这个windows就十分简单了，直接下载安装即可。我是下载的<a href="https://git-scm.com/" target="_blank" rel="external">这个版本</a>的.<br>然后就是不停的下一步就可以。</p>
-<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><ol>
-<li><p>Node.js的下载与安装</p>
-<p>node.js的<a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址</a>。自己选择路径，安装完以后，进入到根目录下。</p>
-<p>打开cmd，<figure class="highlight plain"><figcaption><span>node -v ``` 能显示出版本号即为成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	</div><div class="line">2.	配置全局模块的存放路径</div><div class="line"></div><div class="line">	npm是NodeJS的模块管理，我们可以自己配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便首先在NodeJs下建立“node_global”及“node_cache”两个文件夹。</div><div class="line">	</div><div class="line">	接着在cmd中键入两行命令：</div></pre></td></tr></table></figure></p>
-<p>G:/&gt; npm config set prefix “G:\Program Files\Programe\nodejs\node_global”     </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">	</div></pre></td></tr></table></figure>
-<p>G:/&gt; npm config set cache “G:\Program Files\Programe\nodejs\node_cache”<br>```</p>
-<p>可以通过输入<code>G:/&gt; npm config get prefix</code> 来查看设置是否成功。</p>
-</li>
-<li><p>设置系统环境变量</p>
-<p>由于前面改变了module的默认地址，所有用户变量都需要跟着改变一下(用户变量<code>PATH</code>修改为刚才我们设置的全局模块存放路径(即<code>G:\Program Files\Programe\nodejs\node_global</code>),否则在使用module的时候会再cmd中出现<code>XXX不是内部或外部命令，也不是可运行的程序或批处理文件</code>    错误。</p>
-<p>用户变量设置</p>
-<blockquote>
-<p>变量名:Path</p>
-<p>变量值:xxxx;G:\Program Files\Programe\nodejs\node_modules\npm;G:\Program Files\Programe\nodejs\node_global</p>
-<p>注:xxxx为你之前的用户变量，只需要在后面加上即可。</p>
-</blockquote>
-<p>同时在系统变量添加<code>NODE_PATH</code>变量，使用全局安装时，首先会在这个目录去寻找模块。</p>
-<blockquote>
-<p>变量名： NODE_PATH</p>
-<p>变量值： G:\Program Files\Programe\nodejs\node_modules</p>
-</blockquote>
-<p><strong>环境变量配置完成了，记得去重启一下电脑,偷懒可是会增加麻烦的</strong></p>
-</li>
-<li><p>测试</p>
-<p>在cmd中输入<code>G:/&gt; npm install bower -g</code>，待安装成功后，输入<code>bower -v</code>， 出现版本号即为配置成功。</p>
-</li>
-<li><p>没了</p>
-<p>开始在安装的时候都挺顺利的，可是在修改完module的路径后，然后去修改环境变量的时候遇到问题了。如果你也遇到相同的问题了，记得在从头看一下这部分。</p>
-</li>
-</ol>
-<h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>一句命令<code>G:/&gt; npm install hexo-cli -g</code></p>
-<p>至此必须的工具就已经安装完成了，然后就是生成博客，上传至Github上的repository中了。</p>
-<p>##</p>
-<h3 id="生成、编写、发布"><a href="#生成、编写、发布" class="headerlink" title="生成、编写、发布"></a>生成、编写、发布</h3><p><strong>以下操作都是在cmd中进行</strong></p>
-<ol>
-<li><p>生成博客</p>
-<p>博客的初始化，这时候就用到了上面注册github时的<code>username</code>。在这之前，首先将自己当前的cmd路径切换到你想将你的blog项目存储的位置上，这个操作就是为了把hexo初始化到你本机当前路径下。当然现在这文件名也就是<code>username.github.io</code> ,你也可以换成其他的</p>
-<p><code>hexo init username.github.io</code></p>
-</li>
-<li><p>更改配置</p>
-<p>hexo在完成后，你就可以去更换各式各样的主题了。先进入到刚生成的Hexo目录下</p>
-<p><code>G:/&gt; cd username.github.io</code><br><code>G:/&gt; git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
-<p>这是一个极简的主题，还有很多主体<a href="https://hexo.io/themes/" target="_blank" rel="external">在这里</a>，想用哪个就用哪个</p>
-<p><strong> 基础配置： </strong> 在你的目录下，开始编辑<code>_config.yml</code>,下面的需要去修改。配置的键值之间一定要有空格，简单的说就是冒号后面空一格。<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置说明</a></p>
-<p><pre><br>title: Chrysalis2H’s Blog        //你博客的名字<code>author: chrysalis2h                //你的名字
-language: zh-Hans                //语言 中文
-theme: next                       //刚刚安装的主题名称
-deploy:
-  type: git                    //使用Git 发布
-  repo: https://github.com/username/username.github.io.git        // 刚创建的Github仓库
-&lt;/pre&gt;
-** 主题配置： **    配置文件在Hexo根目录下的</code>/themes/next/_config.yml`。<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="external">next 配置说明</a></pre></p>
-</li>
-<li><p>准备工作基本已完成</p>
-<p>你的blog文章目录在根目录下的<code>/source/_posts/</code>里，里面的<code>hello-world.md</code>已经等你好久了。文章用Markdown来编写，也不用再去写一篇了，直接来准备测试一下看看吧。</p>
-</li>
-<li><p>测试及发布</p>
-<p><code>G:/&gt; hexo s</code></p>
-<p>启动成功后，就可以在浏览器中打开了，地址<code>http://localhost:4000</code>。<br>终于看到了T_T</p>
-<p>接下来就准备要发布到你开始注册的<code>username.github.io</code>的仓库中了(这个终于派上用场了-_-),    安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>自动发布工具</p>
-</li>
-</ol>
-<pre><code>`G:&gt; npm install hexo-deployer-git --save`
-
-终于到了发布的时候了，
-
-`G:/&gt; hexo clean &amp;&amp; hexo g &amp;&amp; hexo d`
-
-要是这是第一次使用，部署会不成功，终端中会让你 `please tell me who you are`，此时你只需要输入
-
-`G:/&gt; git config --global user.email &quot;github的邮箱&quot;`
-`G:/&gt; git config --global user.name &quot;github的username&quot;`
-
-然后再执行发布命令就行了。每次写完blog，执行以下命令就发布上去了，so easy。
-
-这时候你就可以去`https://username.github.io`,看看你的blog了。
-</code></pre><h4 id="我遇到的问题"><a href="#我遇到的问题" class="headerlink" title="我遇到的问题"></a>我遇到的问题</h4><p>不知道经过上面那些你打开没，反正我第一次是没有成功的打开blog，项目也传上去了，测试也成功了，然后就是没打开。后来就又从头来了一遍，将仓库名和我的username命名为一致(<strong>这个真的很重要</strong>)。其实用hexo+github来搭建一个blog还是很方便的</p>
-<p>##</p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>参考了好多文章，然后将里面的东西搬运到自己这，也是为自己做一个记录。</p>
-<p><code>Hello World, Hello Hexo</code></p>
-
-          
+<p>##<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/10/Github+Hexo  搭建个人博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
